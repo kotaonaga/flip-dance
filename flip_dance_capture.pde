@@ -23,6 +23,14 @@ int clickedTime = 0;
 //afterCam系
 int afterCountDown;
 
+//パラパラ漫画系
+float count;
+PImage photo1;
+PImage photo2;
+PImage photo3;
+PImage photo4;
+PImage photo5;
+PImage photo6;
 
 void setup() {
   size(800, 500);
@@ -40,7 +48,6 @@ void draw() {
   if (mode == 6) _end();
   if (mode == 7) _send();
   println(mode);
-  
 }
 
 void _photo2() {
