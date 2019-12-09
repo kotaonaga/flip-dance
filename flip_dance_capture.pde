@@ -23,6 +23,11 @@ int clickedTime = 0;
 //afterCam系
 int afterCountDown;
 
+
+//お手本画像
+PImage easy1;
+PImage easy2;
+
 //パラパラ漫画系
 float count;
 PImage photo1;
@@ -33,10 +38,12 @@ PImage photo5;
 PImage photo6;
 
 void setup() {
-  size(800, 500);
+  size(800, 500);//半分サイズは400, 250
   textSize(30);
   PFont font = createFont("MS Gothic", 30);
   textFont (font);
+  
+  //テスト的にここに書いています。あとで消す。
 }
 
 void draw() {

@@ -16,9 +16,9 @@ void _afterCam() {
   if (afterCountDown > 0) {
     if (afterCountDown <= 10) {
     }
-    text("COUNT DOWN : "+ afterCountDown, 20, 40);
+    text(afterCountDown, 20, 40);
   } else {
-    text("TIME OVER", 20, 40);
+    //text("TIME OVER", 20, 40);
   }
 
   if (afterCountDown == 0) {

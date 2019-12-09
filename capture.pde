@@ -1,7 +1,7 @@
 void _capture() {
-
+  
   if (isCamOn == false) {
-    cam = new Capture(this, width, height, "FaceTime HD Camera");
+    cam = new Capture(this, 400, 250, "FaceTime HD Camera");
     cam.start();
     isCamOn = true;
   }
@@ -15,23 +15,30 @@ void _capture() {
   int nowTime = millis()/1000;
   int elapsedTime = nowTime - clickedTime;
   countDown = timeLimit - elapsedTime;
-
+  
+  //カメラを表示
   if (cam.available()) {
     cam.read();
   }
-
+  
   pushMatrix();
   scale(-1, 1);
-  image(cam, -cam.width, 0);
+  image(cam, -cam.width * 2, height/2);
   popMatrix();
 
-
+  //お手本画像を表示
+  PImage easy1 = loadImage("dance1.jpeg");
+  PImage easy2 = loadImage("dance2.jpeg");
+  if(danceMode == 1)image(easy1, 0, height/2);
+  if(danceMode == 2) image(easy2, 0, height/2);
+  
+  
   if (countDown > 0) {
     if (countDown <= 10) {
     }
-    text("COUNT DOWN : " + countDown, 20, 40);
+    text(countDown, 20, 40);
   } else {
-    text("TIME OVER", 20, 40);
+    //text("TIME OVER", 20, 40);
   }
 
   if (countDown == 0) {
