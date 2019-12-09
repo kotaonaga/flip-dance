@@ -1,76 +1,52 @@
 import processing.video.*;
 
+//状態遷移
+int mode = 1;
+int danceMode = 1;
+
+//カメラ系
 Capture cam;
-int mode = 0;
 boolean isCamOn = false;
+boolean isPhoto1Taken = false;
+boolean isPhoto2Taken = false;
+
+//カメラで撮った後の処理
+boolean isCaptured = false;
+int capturedTime = 0;
+
+//タイマー系
+int timeLimit = 5;
+int countDown;
+boolean isClicked = false;
+int clickedTime = 0;
+
+//afterCam系
+int afterCountDown;
+
 
 void setup() {
   size(800, 500);
+  textSize(30);
+  PFont font = createFont("MS Gothic", 30);
+  textFont (font);
 }
 
 void draw() {
   if (mode == 1) _start();
   if (mode == 2) _select();
   if (mode == 3) _ready();
-  if (mode == 4) _photo1();
-  if (mode == 5) _photo2();
+  if (mode == 4) _capture();
+  if (mode == 5) _afterCam();
   if (mode == 6) _end();
   if (mode == 7) _send();
   println(mode);
+  
 }
 
-void _start() {
-  background(255);
-  fill(0);
-  text("遊び方", 0, 100);
-
-  fill(0);
-  text("①踊り方を選ぶ", 0, 150);
-
-  fill(0);
-  text("②写真を2〜3枚とる", 0, 200);
-
-  fill(0);
-  text("③踊っているあなたがダンスフロアへ！", 0, 250);
-}
-
-void _select() {
-  background(255);
-  fill(0);
-  text("どう踊る？", 0, 100);
-}
-
-void _ready() {
-  background(255);
-  fill(0);
-  text("テキトーに踊る", 0, 100);
-
-  background(255);
-  fill(0);
-  text("写真を取られる準備ができたらボタンを押して足下のマークにたってね", 0, 100);
-}
-
-void _photo1() {
-
-  if (isCamOn == false) {
-    cam = new Capture(this, width, height, "FaceTime HD Camera");
-    cam.start();
-    isCamOn = true;
-  }
-
-  if (cam.available()) {
-    cam.read();
-  }
-
-  pushMatrix();
-  scale(-1, 1);
-  image(cam, -cam.width, 0);
-  popMatrix();
-}
 void _photo2() {
+  text("カメラ2回目撮るよ〜！", 0, 300);
 }
-void _end() {
-}
+
 void _send() {
 }
 
