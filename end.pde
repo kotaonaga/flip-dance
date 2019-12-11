@@ -7,7 +7,7 @@ void _end() {
   fill(0);
   text("できたよ\nこんな感じ！", 0, 200);
 
-  count = count + 0.1;
+  count = count + 0.5;
   if (count >= 4) {
     count = 0;
   }
@@ -17,12 +17,12 @@ void _end() {
 
   // フレーム番号に応じて画像を出し分ける
   if (f == 0) {
-    image(photo1, 0, 0, 270, 180);
+    image(photo1, 0, 0, imageWidth, imageHeight);
   } else if (f == 1) {
-    image(photo2, 0, 0, 270, 180);
+    image(photo2, 0, 0, imageWidth, imageHeight);
   } else if (f == 2) {
-    image(photo1, 0, 0, 270, 180);
+    image(photo1, 0, 0, imageWidth, imageHeight);
   } else if (f == 3) {
-    image(photo2, 0, 0, 270, 180);
+    image(photo2, 0, 0, imageWidth, imageHeight);
   }
 }

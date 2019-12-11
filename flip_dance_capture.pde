@@ -37,8 +37,13 @@ PImage photo4;
 PImage photo5;
 PImage photo6;
 
+//画像サイズ
+int imageWidth = 800 / 2;
+int imageHeight = 500/2;
+
 void setup() {
   size(800, 500);//半分サイズは400, 250
+  //fullScreen(2);
   textSize(30);
   PFont font = createFont("MS Gothic", 30);
   textFont (font);
