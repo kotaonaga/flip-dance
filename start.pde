@@ -1,18 +1,27 @@
 void _start() {
   background(255);
-  fill(0);
-  text("遊び方", 0, 100);
 
-  fill(0);
-  text("①踊り方を選ぶ", 0, 150);
+  if (mouseX > 1200 && mouseX < 1680 &&
+    mouseY > 735 && mouseY < 865) {
+    isCursorOn = true;
+  } else {
+    isCursorOn = false;
+  }
 
-  fill(0);
-  text("②写真を2〜3枚とる", 0, 200);
+  if (isStartOn == false) {
+    start_ui = loadImage("ui/start_ui.png");
+    start_button = loadImage("start_button.png");
+    start_button_on = loadImage("start_button_on.png");
+    isStartOn = true;
+  }
 
-  fill(0);
-  text("③踊っているあなたがダンスフロアへ！", 0, 250);
 
-  rect(0, 300, 300, 100);
-  fill(255);
-  text("start!", 0, 350);
+  image(start_ui, halfWidth, 0);
+
+  if (isCursorOn) {
+    image(start_button_on, 1220, 770);
+  } else {
+    image(start_button, 1220, 770);
+  }
+  night_club();
 }
