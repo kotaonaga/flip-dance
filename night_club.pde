@@ -1,4 +1,5 @@
 void night_club() {
+  //音楽をProcessingで鳴らす際はこちらを使う。
   ////danceMusicPlayer.loop();
   ////player.loop();
   
@@ -9,10 +10,7 @@ void night_club() {
   ////if(player.isPlaying() == false){
   ////  player.play(0);
   ////}
-  
-  PImage easy1 = loadImage("dance1.jpeg");
-  PImage easy2 = loadImage("dance2.jpeg");
-  //PImage[] first_gif = {easy1, easy2};
+
   PImage[] gifs = new PImage[10000];
   
   for(int i = 1; i <= photoCount; i++){
@@ -25,8 +23,6 @@ void night_club() {
     for (int i = 1; i < photoCount; i++) {
       rx[i] = (int) random(width/4);
       ry[i] = (int) random(height * 3/4);
-      //rx[i] = 10 * i;
-      //ry[i] = 40 * i;
       isClubOn = true;
     }
   }

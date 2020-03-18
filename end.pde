@@ -1,11 +1,10 @@
+//end画面の処理
 void _end() {
   background(255);
   
   if (isEnd == false) {
     capturedTime = millis()/1000;
     end_ui = loadImage("ui/end_ui.png");
-    //photo1 = loadImage("photo" + (photoCount - 1) + ".png");
-    //photo2 = loadImage("photo" + (photoCount) + ".png");
     isEnd = true;
   }
   image(end_ui, width/2, 0);
@@ -29,7 +28,7 @@ void _end() {
     count = 0;
   }
 
-  // カウントを floor() で切り捨てしてフレーム番号を計算
+  //カウントを floor() で切り捨てしてフレーム番号を計算
   int f = floor(count);
 
   // フレーム番号に応じて画像を出し分ける
@@ -42,5 +41,4 @@ void _end() {
   } else if (f == 3) {
     image(photo2, 1056, 395, width/2.5, height/2.5);
   }
-  println(f);
 }

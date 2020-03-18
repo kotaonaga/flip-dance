@@ -1,3 +1,4 @@
+//カメラで1枚目を撮った後の処理。
 void _afterCam() {
   background(255);
   

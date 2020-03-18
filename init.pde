@@ -1,3 +1,4 @@
+//初期化。start画面に戻る際に呼ばれる。
 void init() {
   danceMode = 1;
   isCamOn = false;

@@ -1,3 +1,4 @@
+//gif完成画面の処理
 void _gif() {
   background(255);
 
@@ -19,14 +20,12 @@ void _gif() {
     mode = 5;
   }
 
-
-
   count = count + 1;
   if (count >= 4) {
     count = 0;
   }
 
-  // カウントを floor() で切り捨てしてフレーム番号を計算
+  //カウントを floor() で切り捨てしてフレーム番号を計算
   int f = floor(count);
 
   // フレーム番号に応じて画像を出し分ける

@@ -1,3 +1,4 @@
+//カメラの画面
 void _capture() {
   background(255);
   PImage captureImg = loadImage("capture.png");
@@ -14,8 +15,6 @@ void _capture() {
     cam = new Capture(this, halfWidth, halfHeight, "FaceTime HD Camera");
     cam.start();
     isCamOn = true;
-    //println(exNum);
-    //println(exNum + 1);
   }
 
   if (isClicked == false) {
@@ -27,8 +26,6 @@ void _capture() {
   int nowTime = millis()/1000;
   int elapsedTime = nowTime - clickedTime;
   countDown = timeLimit - elapsedTime;
-
-  //カメラを表示
 
   if (cam.available()) {
     cam.read();
@@ -77,7 +74,6 @@ void _capture() {
       isPhoto2Taken = true;
     } else {
     }
-
     background(255);
   }
 
@@ -91,7 +87,6 @@ void _capture() {
     }
 
     if (isPhoto1Taken == true && isPhoto2Taken == true) {
-      //gif画面に遷移
       mode = 4;
     }
   }

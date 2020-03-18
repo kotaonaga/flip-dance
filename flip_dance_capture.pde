@@ -4,11 +4,8 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
-
 import processing.sound.*;
 import processing.video.*;
-
-//Music
 
 //スタート
 PImage start_ui;
@@ -73,12 +70,8 @@ float count;
 int photoCount = 0;
 PImage photo1;
 PImage photo2;
-PImage photo3;
-PImage photo4;
-PImage photo5;
-PImage photo6;
 
-//画像サイズ
+//画像半分サイズ
 int halfWidth = 1920 / 2; //960
 int halfHeight = 1080 /2; //540
 
@@ -102,14 +95,11 @@ PImage count2;
 PImage count3;
 
 void setup() {
-  //int: either ARROW, CROSS, HAND, MOVE, TEXT, or WAIT
   cursor(HAND);
-  size(1920, 1080);//半分サイズは400, 250 1920と1080。半分は960と540。
+  //size(1920, 1080);//半分サイズは400, 250 1920と1080。半分は960と540。
+  size(960, 540);
   //surface.setLocation(-width, -700);
-  //fullScreen(2);
-  textSize(30);
-  PFont font = createFont("MS Gothic", 30);
-  textFont (font);
+  //fullScreen(2); //本番用
 
   minim = new Minim(this);  //初期化
   player = minim.loadFile("camera-shutter1.mp3");  //sample.mp3をロードする
@@ -125,6 +115,7 @@ void draw() {
   if (mode == 6) _afterCam();
 }
 
+//テスト用
 void keyPressed() {
   if (key == '1') mode = 1;
   if (key == '2') mode = 2;
@@ -134,6 +125,7 @@ void keyPressed() {
   if (key == '6') mode = 6;
 }
 
+//ボタンの領域判定
 void mouseClicked() {
   if (mode == 1 &&
     mouseX > 1200 && mouseX < 1680 &&

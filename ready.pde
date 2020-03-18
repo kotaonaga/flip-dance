@@ -1,7 +1,6 @@
 void _ready() {
   background(255);
 
-
   if (mouseX > 1200 && mouseX < 1680 &&
     mouseY > 735 && mouseY < 865) {
     isCursorOn = true;
@@ -11,7 +10,7 @@ void _ready() {
 
   night_club();
   if (isMovieOn ==false) {
-    
+
     ready_button = loadImage("ready_button.png");
     ready_button_on = loadImage("ready_button_on.png");
     movie = new Movie(this, "instruction.MOV");
@@ -21,7 +20,6 @@ void _ready() {
   PImage ready_ui = loadImage("ui/ready_ui.png");
   image(ready_ui, halfWidth, 0);
   image(movie, 1120, 350, 640, 360);
-  //image(movie, 0, 0);
 
   if (isMovieOn) {
     if (isCursorOn) {

@@ -15,7 +15,6 @@ void _start() {
     isStartOn = true;
   }
 
-
   image(start_ui, halfWidth, 0);
 
   if (isCursorOn) {
